@@ -1,0 +1,12 @@
+[filter "lfs"]
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	excludesfile = ~/.gitignore_global
+[alias]
+  update = "!git fetch --all && git rebase"
+  purge = "!f() { git branch -D \"$1\"; }; f"
+  rename = "!f() { git branch -m \"$1\"; }; f"
+  new = "!f() { git checkout -b \"$1\"; }; f"
+  root = "checkout main"
