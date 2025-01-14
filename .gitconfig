@@ -10,3 +10,4 @@
   rename = "!f() { git branch -m \"$1\"; }; f"
   new = "!f() { git checkout -b \"$1\"; }; f"
   root = "checkout main"
+  cleanup = "remote prune origin"
